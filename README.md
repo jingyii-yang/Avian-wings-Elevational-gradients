@@ -1,4 +1,4 @@
-Data and code to reproduce the analyses and figures presented in the manuscript ''Elevational constraints on flight efficiency shape global gradients in avian wing morphology'' (Current Biology).
+Data and code to reproduce the analyses and figures presented in the manuscript **''Elevational constraints on flight efficiency shape global gradients in avian wing morphology''** (Current Biology).
 
 Data S1.xlsx contains the full dataset and the metadata of all variables.
 
