@@ -6,4 +6,4 @@ The R scripts for reproducing PGLS model results are provided as 1. PGLS global 
 
 Code for generating figures and supplementary tables can be found in file 3. Figures and tables.R.
 
-The 100 randomly selected phylogenetic trees necessary for reproducing all model results can be found at https://doi.org/10.6084/m9.figshare.28477148.v1.
+The 100 randomly selected phylogenetic trees necessary for reproducing all model results can be found at https://doi.org/10.6084/m9.figshare.28477148.
