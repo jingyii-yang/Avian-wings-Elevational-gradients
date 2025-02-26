@@ -1,6 +1,6 @@
 Data and code to reproduce the analyses and figures presented in the manuscript **''Elevational constraints on flight efficiency shape global gradients in avian wing morphology''** (Current Biology).
 
-Data S1.xlsx contains the full dataset and the metadata of all variables.
+Dataset 1.xlsx contains the full dataset and the metadata of all variables. The .csv versions of files for use in R scripts are also provided.
 
 The R scripts for reproducing PGLS model results are provided as 1. PGLS global models.R (related to Figure 3) and 2. PGLS elevation band models.R (related to Figure 4).
 
