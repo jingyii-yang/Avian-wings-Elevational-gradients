@@ -9,7 +9,7 @@ library(phylolm)
 # 100 randomly selected tree from 10,000 full trees (9,993 species; Hackett backbone)
 n_trees <- readRDS('100 random trees.rds') 
 # read the BirdTree version of dataset
-dat = read.csv('Data S1_BirdTree.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1')
+dat = read.csv('B_BirdTree data.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1')
 # remove flightless (and NA) species - irrelevant to hypothesis
 dat = filter(dat, Flight.Mode != 'flightless')
 # align species names to phylogeny

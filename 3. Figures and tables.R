@@ -16,7 +16,7 @@ select = dplyr::select
 between = dplyr::between
 
 # read the dataset for main analyses
-dat = read.csv('Data S1_BirdTree.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1') %>%
+dat = read.csv('B_BirdTree data.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1') %>%
   filter(Flight.Mode != 'flightless')
 
 
@@ -442,7 +442,7 @@ write.csv(summary_mods, '../SI tables/r2.lambda summary.csv')
 # use the more recent Clements taxonomy for this analysis
 
 { # add Clements taxonomy info
-  cw = read.csv('Data S1_crosswalk.csv')
+  cw = read.csv('D_Taxonomic crosswalk.csv')
   cw = unique(cw[,c('Species_BirdTree', 'Species_Clements', 'Family_Clements')]) %>% na.omit()
   dat = left_join(dat, cw, by='Species_BirdTree')
   dat = select(dat, -c('Species_Clements')) %>% unique() # remove duplicates
@@ -777,7 +777,7 @@ ggsave(file = '../Figures/fig.S4.svg', plot = px6, width = 16.2, height = 12.9)
 
 ######## figure S6 (related to fig.4) ########
 
-dat = read.csv('../Data S1_BirdTree.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1', MIN = 'Min.Elevation.1')
+dat = read.csv('../B_BirdTree data.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1', MIN = 'Min.Elevation.1')
 dat = filter(dat, Flight.Mode != 'flightless', Migration != 3)
 
 ## assign elevation bands to each species (same as fig.4)
@@ -864,9 +864,9 @@ setwd('X:/home/_Wings_/HPC/')
 
 ########  Fig. S1 ######## 
 
-dat = read.csv('Data S1_BirdTree.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1')
+dat = read.csv('B_BirdTree data.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1')
 {# add order-level taxonomic info
-  cw = read.csv('Data S1_crosswalk.csv')
+  cw = read.csv('D_Taxonomic crosswalk.csv')
   cw = unique(cw[,c('Species_BirdTree', 'Order_Clements')]) %>% na.omit()
   dat = left_join(dat, cw, by='Species_BirdTree')
 }
@@ -923,7 +923,7 @@ ggsave(file="Figures/fig.S1.svg", plot=p, width=7.7, height=3.2)
 
 ########  Fig. S2 ######## 
 
-dat = read.csv('Data S1_BirdTree.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1')
+dat = read.csv('B_BirdTree data.csv') %>% rename(MAX = 'Max.Elevation.1', MEAN = 'Mean.Elevation.1')
 
 ### fig.S2C (HWI validation)
 
@@ -962,7 +962,7 @@ ggsave('Figures/fig.S2D.svg', width = 5, height = 5)
 
 ########  Fig. S5 ######## 
 
-elev = read.csv('Raw elevation data.csv')
+elev = read.csv('E_Raw elevation data.csv')
 
 ##### top panels: comparing raw elevation data
 
@@ -1007,7 +1007,7 @@ pb=ggplot(elev_plot, aes(all_ranges_mean/1000, breeding_range_mean/1000, col=Mig
 
 ##### bottom panels: comparing merged elevation data
 
-dat = read.csv('Data S1_BirdTree.csv') 
+dat = read.csv('B_BirdTree data.csv') 
 
 # fig. S5C (max elevation)
 elev_plot = na.omit(dat[, c('Max.Elevation.1', 'Max.Elevation.2')])
